@@ -6,8 +6,6 @@ section .data
   writein db `\tbar\n` ; char to be write in file foo
   len equ $-writein
 
-  ; debug why is not writting 
-
 section .text
   global _start
   _start:
@@ -15,7 +13,7 @@ section .text
     ; open syscall
     mov rax, 2 ; syscall to open
     mov rdi, file ; pointer to name of the file (bytes)
-    mov rsi, 0x441 ; flag mode to open file
+    mov rsi, 0x401 ; flag mode to open file
     mov rdx, 0o777; permission mode 
     syscall ; call
 
